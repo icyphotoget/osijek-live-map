@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+html, body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Custom scrollbar for dark mode */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #171717;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3B82F6;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2563EB;
+}
+
+/* Leaflet fixes for dark mode */
+.leaflet-container {
+  background: #0A0A0A !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: #1E1E1E !important;
+  color: white !important;
+  border-radius: 12px !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+}
+
+.leaflet-popup-tip {
+  background: #1E1E1E !important;
+}
+
+.leaflet-popup-close-button {
+  color: white !important;
+  font-size: 20px !important;
+  padding: 8px !important;
+}
+
+.leaflet-popup-close-button:hover {
+  color: #3B82F6 !important;
+}
+
+.leaflet-control-zoom {
+  border: none !important;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3) !important;
+}
+
+.leaflet-control-zoom a {
+  background: #1E1E1E !important;
+  color: white !important;
+  border: none !important;
+  width: 36px !important;
+  height: 36px !important;
+  line-height: 36px !important;
+  font-size: 18px !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: #3B82F6 !important;
+}
+
+/* Custom marker styles */
+.custom-marker {
+  background: none;
+  border: none;
+}
+
+.marker-pin {
+  width: 40px;
+  height: 40px;
+  border-radius: 50% 50% 50% 0;
+  background: #3B82F6;
+  position: absolute;
+  transform: rotate(-45deg);
+  left: 50%;
+  top: 50%;
+  margin: -20px 0 0 -20px;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marker-pin::after {
+  content: '';
+  width: 16px;
+  height: 16px;
+  background: white;
+  margin: auto;
+  border-radius: 50%;
+  transform: rotate(45deg);
+}
+
+.marker-icon {
+  transform: rotate(45deg);
+  margin-top: -2px;
+  margin-left: -2px;
+}
+
+/* Animation keyframes */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out;
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(30, 30, 30, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Category pills scrollbar hide */
+.category-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.category-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
